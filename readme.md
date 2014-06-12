@@ -5,3 +5,5 @@ A sample application implemented in both Swift and Objective-C to show the diffe
 The app will place a pin on a map for a user specified location.
 
 I make no claims this is ideal code in either Swift or Objective-C. Simply a quick hack to look at the differences and learn some Swift.
+
+Two applications are contained in an Xcode 6 workspace so the code can be compared side by side.
