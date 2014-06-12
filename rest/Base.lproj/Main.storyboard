@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rest" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DnD-59-JaI">
+                                <rect key="frame" x="20" y="22" width="226" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-Xh-vgh">
+                                <rect key="frame" x="20" y="58" width="280" height="402"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KI3-Ok-6am"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HF6-ws-Stt">
+                                <rect key="frame" x="254" y="22" width="44" height="30"/>
+                                <state key="normal" title="Find It">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0f-zF-Rbe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HF6-ws-Stt" secondAttribute="trailing" constant="22" id="4ME-rz-LtE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OSc-Xh-vgh" secondAttribute="bottom" constant="20" id="7jC-3F-rJp"/>
+                            <constraint firstItem="OSc-Xh-vgh" firstAttribute="top" secondItem="DnD-59-JaI" secondAttribute="bottom" constant="6" id="7wm-It-Jw5"/>
+                            <constraint firstItem="OSc-Xh-vgh" firstAttribute="leading" secondItem="DnD-59-JaI" secondAttribute="leading" id="L1g-kN-WhT"/>
+                            <constraint firstItem="DnD-59-JaI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="X9L-HM-pk2"/>
+                            <constraint firstAttribute="centerY" secondItem="OSc-Xh-vgh" secondAttribute="centerY" constant="-19" id="d2P-CB-eh2"/>
+                            <constraint firstItem="HF6-ws-Stt" firstAttribute="leading" secondItem="DnD-59-JaI" secondAttribute="trailing" constant="8" id="dgc-LW-06h"/>
+                            <constraint firstAttribute="trailing" secondItem="OSc-Xh-vgh" secondAttribute="trailing" constant="20" id="ifM-Kd-0hs"/>
+                            <constraint firstItem="DnD-59-JaI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="nZ3-7W-qwv"/>
+                            <constraint firstItem="DnD-59-JaI" firstAttribute="centerY" secondItem="HF6-ws-Stt" secondAttribute="centerY" id="rR1-NN-Y61"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="OSc-Xh-vgh" id="wD3-ZU-hwV"/>
+                        <outlet property="textField" destination="DnD-59-JaI" id="Psg-P5-38V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304" y="149"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>
